@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.files = FileList[
     'MIT-LICENSE', 'README', '*.rb', 'Rakefile',
     'lib/*.rb', 'lib/admin_assistant/*.rb', 'lib/admin_assistant/*/*.rb',
+    'lib/javascripts/*.js',
     'lib/images/*.png', 'lib/stylesheets/*.css', 'lib/views/*.erb', 
     'tasks/*.rake'
   ].to_a
