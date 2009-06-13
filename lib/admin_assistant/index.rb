@@ -247,7 +247,7 @@ class AdminAssistant
           ) << ' '
         end
         @right_column_lambdas.each do |lambda|
-          link_args = lambda.call record
+          link_args = @action_view.instance_exec(record, &lambda)
           links << @action_view.link_to(*link_args)
         end
         links

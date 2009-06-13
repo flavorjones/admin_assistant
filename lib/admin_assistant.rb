@@ -6,6 +6,7 @@ require 'admin_assistant/form_view'
 require 'admin_assistant/helper'
 require 'admin_assistant/index'
 require 'admin_assistant/request'
+require 'admin_assistant/extensions/object'
 require 'will_paginate'
 
 class AdminAssistant
