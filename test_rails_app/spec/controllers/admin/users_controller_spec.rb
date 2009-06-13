@@ -49,13 +49,18 @@ describe Admin::UsersController do
       get :index
     end
     
-    it 'should show a Delete link and a link to the profile page' do
+    it 'should show a Delete link, a link to the profile page and a link generated from polymorphic_path' do
       response.should have_tag('td') do
         with_tag("a[href=#][onclick*='new Ajax.Request']", :text => 'Delete')
         with_tag(
           "a[href=?]",
           "/admin/blog_posts/new?blog_post%5Buser_id%5D=#{@user.id}",
           :text => "New blog post"
+        )
+        with_tag(
+          "a[href=?]",
+          "/admin/users/#{@user.id}/foo",
+          :text => "Quux"
         )
       end
     end

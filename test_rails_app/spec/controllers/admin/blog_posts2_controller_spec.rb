@@ -193,7 +193,7 @@ describe Admin::BlogPosts2Controller do
       it 'should render the author as a username with a link' do
         response.should have_tag('td') do
           with_tag(
-            "a[href=?]", "/admin/users/edit/#{@user.id}", :text => 'soren'
+            "a[href=?]", "/admin/users/#{@user.id}/edit", :text => 'soren'
           )
         end
       end

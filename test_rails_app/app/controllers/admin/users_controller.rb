@@ -15,6 +15,10 @@ class Admin::UsersController < ApplicationController
           { :controller => '/admin/blog_posts', :action => 'new',
             :blog_post => {:user_id => user.id} } ]
       }
+      index.right_column_links << lambda { |user|
+        [ "Quux",
+          polymorphic_path([:admin, user], :action => 'foo') ]
+      }
     end
   end
   
